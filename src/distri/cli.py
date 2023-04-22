@@ -1,3 +1,6 @@
+"""
+CLI module that defines the behaviour of `distri`.
+"""
 import sys
 
 import click
@@ -8,11 +11,17 @@ from . import config, errors
 
 @click.group
 def cli() -> None:
+    """
+    Funtion that will groups all cli subcommands.
+    """
     pass
 
 
 @cli.command
 def version() -> None:
+    """
+    Invoked whe running `distri version`, printing the CLI version.
+    """
     v = '0.1.0'
 
     click.echo(f'v{v}')
@@ -21,6 +30,13 @@ def version() -> None:
 @cli.command
 @click.option('--path', default='/etc/os-release', help='os release file path to parse')
 def display(path : str) -> None:
+    """
+    Load, parse and show data from an os-release file.
+
+    It parses the config file from `/etc/os-release` if no path is provided.
+
+    Parsed data is shown in a table.
+    """
     data = config.load(path)
 
     table = PrettyTable([], header=False, align='l')
@@ -31,6 +47,11 @@ def display(path : str) -> None:
 
 
 def run() -> None:
+    """
+    Run the CLI by invoking the `cli()` function.
+
+    It will gracefully fail if a `errors.DistriError` is risen.
+    """
     try:
         cli()
     except errors.DistriError as e:

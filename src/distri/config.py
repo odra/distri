@@ -1,3 +1,7 @@
+"""
+Module to parse an os-release config file.
+"""
+
 import re
 import os
 from typing import Dict, List, Optional, Tuple
@@ -6,6 +10,9 @@ from .errors import DistriError
 
 
 def load(path: str) -> Dict[str, Optional[str]]:
+    """
+    Load an os-relase config file from a given path.
+    """
     data: Dict[str, Optional[str]] = {}
 
     for line in read_lines(path):
@@ -17,6 +24,9 @@ def load(path: str) -> Dict[str, Optional[str]]:
 
 
 def read_lines(path: str) -> List[str]:
+    """
+    Open and return an os-release file lines in a list.
+    """
     if not os.path.exists(path):
         raise DistriError(f'path not found: {path}')
 
@@ -27,6 +37,13 @@ def read_lines(path: str) -> List[str]:
 
 
 def parse_line(line: str) -> Tuple[str, Optional[str]]:
+    """
+    Parse an os-release line, returning the field name and value
+    in a tuple.
+
+    Return tuple with empty strigs `('', '')` if the regex
+    fails to match its pattern against the line string.
+    """
     p = '^([A-Z_]+)=\"?([a-zA-Z0-9\s\(\)\:\;\-\/\.\,]+)?\"?$'
     s = re.search(p, line)
     if s:

@@ -2,6 +2,14 @@
 
 A CLI that shows parsed data from an linux os release file, usually located at /etc/os-release.
 
+## Installation
+
+Install from a git branch:
+
+```sh
+pip install git+https://github.com/odra/distri.git@master
+```
+
 ## Usage
 
 Showing the CLI version:

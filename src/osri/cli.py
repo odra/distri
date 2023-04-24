@@ -1,5 +1,5 @@
 """
-CLI module that defines the behaviour of `distri`.
+CLI module that defines the behaviour of `osri`.
 """
 import sys
 
@@ -20,7 +20,7 @@ def cli() -> None:
 @cli.command
 def version() -> None:
     """
-    Invoked whe running `distri version`, printing the CLI version.
+    Invoked whe running `osri version`, printing the CLI version.
     """
     v = '0.1.0'
 
@@ -50,10 +50,10 @@ def run() -> None:
     """
     Run the CLI by invoking the `cli()` function.
 
-    It will gracefully fail if a `errors.DistriError` is risen.
+    It will gracefully fail if a `errors.OSRIError` is risen.
     """
     try:
         cli()
-    except errors.DistriError as e:
+    except errors.OSRIError as e:
         sys.stderr.write(f'{e}\n')
         sys.exit(e.code)

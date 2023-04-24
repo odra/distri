@@ -1,6 +1,6 @@
 from click.testing import CliRunner
 
-from distri import cli
+from osri import cli
 
 
 def test_version_ok():

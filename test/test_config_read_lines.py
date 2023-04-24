@@ -1,4 +1,4 @@
-from distri import errors, config
+from osri import errors, config
 
 import pytest
 
@@ -6,7 +6,7 @@ import pytest
 def test_read_lines_error(twd):
     path = f'{twd}/notfound'
 
-    with pytest.raises(errors.DistriError) as e:
+    with pytest.raises(errors.OSRIError) as e:
         config.read_lines(path)
 
     assert str(e.value) == f'[1] path not found: {path}'

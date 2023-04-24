@@ -1,10 +1,10 @@
 import pytest
 
-from distri import errors
+from osri import errors
 
 
 def test_simple():
-    e = errors.DistriError('myerror')
+    e = errors.OSRIError('myerror')
 
     assert e.message == 'myerror'
     assert e.code == 1
@@ -12,7 +12,7 @@ def test_simple():
 
 
 def test_full():
-    e = errors.DistriError('myerror', 2)
+    e = errors.OSRIError('myerror', 2)
 
     assert e.message == 'myerror'
     assert e.code == 2
@@ -20,5 +20,5 @@ def test_full():
 
 
 def test_exception():
-    with pytest.raises(errors.DistriError):
-        raise errors.DistriError('myerror')
+    with pytest.raises(errors.OSRIError):
+        raise errors.OSRIError('myerror')

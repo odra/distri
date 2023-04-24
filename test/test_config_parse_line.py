@@ -1,4 +1,4 @@
-from distri import config
+from osri import config
 
 
 def test_parse_line_error():

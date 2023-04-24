@@ -6,7 +6,7 @@ import re
 import os
 from typing import Dict, List, Optional, Tuple
 
-from .errors import DistriError
+from .errors import OSRIError
 
 
 def load(path: str) -> Dict[str, Optional[str]]:
@@ -28,7 +28,7 @@ def read_lines(path: str) -> List[str]:
     Open and return an os-release file lines in a list.
     """
     if not os.path.exists(path):
-        raise DistriError(f'path not found: {path}')
+        raise OSRIError(f'path not found: {path}')
 
     with open(path, 'r') as f:
         lines = f.readlines()

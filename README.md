@@ -1,4 +1,4 @@
-# Distri
+# OSRI: OS Release Info
 
 A CLI that shows parsed data from an linux os release file, usually located at /etc/os-release.
 
@@ -7,7 +7,7 @@ A CLI that shows parsed data from an linux os release file, usually located at /
 Install from a git branch:
 
 ```sh
-pip install git+https://github.com/odra/distri.git@master
+pip install git+https://github.com/odra/osri.git@master
 ```
 
 ## Usage
@@ -15,14 +15,14 @@ pip install git+https://github.com/odra/distri.git@master
 Showing the CLI version:
 
 ```sh
-distri version
+osri version
 ```
 
-Displaying a distro's info (path defaults to `/etc/os-release`):
+Displaying an os release info (path defaults to `/etc/os-release`):
 
 ```sh
-distri display
-distri display --path /etc/another-os-release
+osri display
+osri display --path /etc/another-os-release
 ```
 
 ## License

@@ -1,6 +1,6 @@
 import json
 
-from distri import config, errors
+from osri import config, errors
 
 import pytest
 
@@ -8,7 +8,7 @@ import pytest
 def test_load_error(fwd):
     path = f'{fwd}/notfound'
 
-    with pytest.raises(errors.DistriError) as e:
+    with pytest.raises(errors.OSRIError) as e:
         config.read_lines(path)
 
     assert str(e.value) == f'[1] path not found: {path}'

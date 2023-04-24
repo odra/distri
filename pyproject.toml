@@ -1,15 +1,15 @@
 [tool.poetry]
-name = "distri"
+name = "osri"
 version = "0.1.0"
 description = "Displays os info based on /etc/os-release"
 authors = ["odra <me@lrossetti.com>"]
 license = "MIT"
 packages = [
-    {include="distri", from="src/"}
+    {include="osri", from="src/"}
 ]
 
 [tool.poetry.scripts]
-distri = "distri.cli:run"
+osri = "osri.cli:run"
 
 [tool.poetry.dependencies]
 python = "^3.11"

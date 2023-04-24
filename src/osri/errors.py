@@ -2,7 +2,7 @@
 This module contains error handling related code.
 """
 
-class DistriError(Exception):
+class OSRIError(Exception):
     """
     Base project error class.
 
@@ -14,7 +14,7 @@ class DistriError(Exception):
 
         Code defaults to `1`.
         """
-        super(DistriError, self).__init__(message)
+        super(OSRIError, self).__init__(message)
 
         self.message = message
         self.code = code

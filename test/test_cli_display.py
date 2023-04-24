@@ -4,7 +4,7 @@ import pytest
 from click.testing import CliRunner
 from prettytable import PrettyTable
 
-from distri import cli, errors
+from osri import cli
 
 
 def test_display_error_file():

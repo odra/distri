@@ -22,7 +22,7 @@ def version() -> None:
     """
     Invoked whe running `osri version`, printing the CLI version.
     """
-    v = '0.1.0'
+    v = '0.1.1'
 
     click.echo(f'v{v}')
 

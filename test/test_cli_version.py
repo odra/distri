@@ -9,4 +9,4 @@ def test_version_ok():
     result = runner.invoke(cli.version, [])
 
     assert result.exit_code == 0
-    assert result.output == 'v0.1.0\n'
+    assert result.output == 'v0.1.1\n'
